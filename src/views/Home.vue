@@ -1,18 +1,39 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="v-home">
+
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
   },
+
+  mounted() {
+    fetch("https://mastermediadesign.ch/api/pages/projects/", {
+      method: "GET",
+      // mode:"no-cors",
+      headers: {
+        'Authorization': 'Basic ' + btoa('public@public.com:publickey'),
+      },
+    })
+        .then(response => response.json())
+        .then(response => {
+          const page = response.data;
+          console.log( page )
+        })
+        .catch(error => {
+          // something went wrong
+        });
+  }
 });
 </script>
+
+<style lang="scss" scoped>
+.v-home {
+
+}
+</style>

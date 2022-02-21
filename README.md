@@ -1,4 +1,4 @@
-# head.web_app.resources___
+# head.webapp
 
 ## Project setup
 ```

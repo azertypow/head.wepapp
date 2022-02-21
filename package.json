@@ -1,7 +1,17 @@
 {
-  "name": "head.web_app.resources___",
+  "name": "head.webapp",
   "version": "0.1.0",
+  "description": "web application to centralise and liste all projects and resources for MaMD HEAD—Genève",
   "private": true,
+  "keywords": [
+    "vuejs",
+    "webapp",
+    "PWA",
+    "Master",
+    "Media",
+    "Design",
+    "HEAD–Genève"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
