@@ -1,34 +1,45 @@
 <template>
   <div class="v-home">
-
+    <page-view>
+      <div
+          v-if="projects"
+          v-for="project of projects.data"
+      >
+        {{project.title}}
+      </div>
+    </page-view>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ResourcesItem from "@/components/ResourcesItem.vue"
+import {IProjects, storeKey} from "@/store"
+import PageView from "@/components/PageView.vue"
+import {useStore} from "vuex"
 
 export default defineComponent({
   name: 'Home',
   components: {
+    PageView,
+    ResourcesItem
+  },
+
+  data() {
+    return {
+      store: useStore(storeKey),
+    }
+  },
+
+  computed: {
+    projects(): IProjects | null {
+      return this.store.state.projectsList
+    }
   },
 
   mounted() {
-    fetch("https://mastermediadesign.ch/api/pages/projects/", {
-      method: "GET",
-      // mode:"no-cors",
-      headers: {
-        'Authorization': 'Basic ' + btoa('public@public.com:publickey'),
-      },
-    })
-        .then(response => response.json())
-        .then(response => {
-          const page = response.data;
-          console.log( page )
-        })
-        .catch(error => {
-          // something went wrong
-        });
   }
+
 });
 </script>
 

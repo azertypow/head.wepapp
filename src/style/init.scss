@@ -1,0 +1,50 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var( --site-background-color );
+  color: var( --site-color );
+  font-size: var( --line-height );
+}
+
+body {
+  @extend .m-f-size-reg;
+  margin: 0 !important;
+  font-family: "website font", Helvetica, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(rgba(var( --site-color--main ), 1) 80%, rgba(var( --site-color--main ), 0) 100%);
+
+  &.link--no_style {
+    background: inherit;
+  }
+}
+
+h1 {
+  @extend .m-f-size-xl;
+}
+
+h2 {
+  @extend .m-f-size-l;
+}
+
+h3  {
+  @extend .m-f-size-reg;
+  text-decoration: underline;
+
+  & + p {
+    margin-top: -3rem;
+  }
+}
+
+p   {
+  @extend .m-f-size-reg;
+}
+
+h4, h5, h6 {
+  @extend .m-f-size-reg;
+}

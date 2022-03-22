@@ -1,0 +1,22 @@
+:root {
+  // grid
+  --padding: 10px;
+  --gutter: 20px;
+  --gutter--half: calc( var(--gutter) / 2 );
+  --header-height: 5rem;
+
+  // colors
+  --site-background-color--rgb-value: 13, 13, 13;
+  --site-background-color: rgb( var(--site-background-color--rgb-value) );
+
+  --site-color--rgb-value: 232, 234, 237;
+  --site-color: rgb( var(--site-color--rgb-value) );
+
+  --site-color--main--rgb-value: 97, 0, 255;
+  --site-color--main: rgb( var(--site-color--main--rgb-value) );
+
+  // typography
+  --line-height: 10px;
+
+}
+
