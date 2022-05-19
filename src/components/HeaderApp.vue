@@ -1,5 +1,5 @@
 <template>
-  <header class="v-header-app m-g-container m-with-gutter--column m-with-gutter--row">
+  <header class="v-header-app m-g-container m-with-gutter--row">
 
     <div class="m-g-coll-2-12">
       <router-link
