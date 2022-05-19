@@ -7,6 +7,7 @@ export default createStore<IState>({
     students: null,
     site: null,
     projectsList: null,
+    projectOpenUri: null,
   },
 
   mutations: {
@@ -34,6 +35,7 @@ export interface IState {
   site: ISite | null
   students: IStudents | null
   projectsList: IProjects | null
+  projectOpenUri: string | null
 }
 
 export interface ISite {
@@ -64,17 +66,14 @@ export interface IImageData {
   }
 }
 
-export interface IProjects {
-  data: {
-    [key: string]: {
-      title: string,
-      cover: {
-        [key: string]: {
-          url: string,
-          safeName: string
-        }
-      },
-      url: string
-    },
-  }[]
+export type IProjects = IProject[]
+
+export interface IProject {
+  title: string,
+  cover: {
+    url: string,
+    safeName: string
+  }[],
+  apiUrl: string,
+  apiUri: string,
 }

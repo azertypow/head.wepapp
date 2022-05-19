@@ -2,9 +2,16 @@
   <div class="v-home">
     <page-view>
       <div
+          class="v-home__project"
           v-if="projects"
-          v-for="project of projects.data"
+          v-for="project of projects"
+          @click="openProject(project.apiUri)"
       >
+        <img
+            v-for="coverData of project.cover"
+            :src="coverData.url"
+            alt=""
+        >
         {{project.title}}
       </div>
     </page-view>
@@ -37,6 +44,12 @@ export default defineComponent({
     }
   },
 
+  methods: {
+    openProject(projectUrl: string) {
+      console.log(projectUrl)
+    },
+  },
+
   mounted() {
   }
 
@@ -45,6 +58,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-home {
+  img {
+    height: calc( var(--line-height) * 5 );
+    display: inline-block;
+    vertical-align: baseline;
+  }
+}
 
+.v-home__project {
+  cursor: pointer;
+  user-select: none;
 }
 </style>
