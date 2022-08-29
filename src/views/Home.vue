@@ -5,7 +5,7 @@
           class="v-home__project"
           v-if="projects"
           v-for="project of projects"
-          @click="openProject(project.apiUri)"
+          @click="openProject(project)"
       >
         <img
             v-for="coverData of project.cover"
@@ -21,9 +21,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ResourcesItem from "@/components/ResourcesItem.vue"
-import {IProjects, storeKey} from "@/store"
+import {IProjects, IProject, storeKey} from "@/store"
 import PageView from "@/components/PageView.vue"
 import {useStore} from "vuex"
+import {apiProjectsPathUri} from "@/main"
 
 export default defineComponent({
   name: 'Home',
@@ -45,9 +46,16 @@ export default defineComponent({
   },
 
   methods: {
-    openProject(projectUrl: string) {
-      console.log(projectUrl)
-    },
+      openProject(project: IProject) {
+        const projectApiUriMinified = project.apiUri.replace(apiProjectsPathUri, '')
+
+        this.$router.push({
+          name: 'Project',
+          params: {
+            apiProjectUriMinified: projectApiUriMinified
+          }
+        })
+      },
   },
 
   mounted() {

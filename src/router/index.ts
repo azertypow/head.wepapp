@@ -11,6 +11,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'For Students',
     component: () => import('../views/Students.vue'),
   },
+  {
+    path: '/project/:apiProjectUriMinified',
+    name: 'Project',
+    component: () => import('../views/Project.vue'),
+  },
 ]
 
 const router = createRouter({

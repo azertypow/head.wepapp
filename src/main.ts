@@ -8,8 +8,10 @@ import store, {IProjects, ISite, storeKey} from './store'
 
 createApp(App).use(store, storeKey).use(router).mount('#app')
 
-const apiBaseUrl = "https://api.mastermediadesign.ch/"
-// const apiBaseUrl = "http://localhost:8000/"
+export const apiBaseUrl = "https://api.mastermediadesign.ch/"
+// export const apiBaseUrl = "http://localhost:8000/"
+
+export const apiProjectsPathUri = 'projects/'
 
 fetch(`${apiBaseUrl}/students`, {
   method: "GET",
