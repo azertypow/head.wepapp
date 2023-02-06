@@ -23,6 +23,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-navigation {
-
+  > * {
+    margin-right: calc( var(--gutter) * 2);
+  }
 }
 </style>

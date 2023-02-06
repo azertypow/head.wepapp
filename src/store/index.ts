@@ -77,3 +77,28 @@ export interface IProject {
   apiUrl: string,
   apiUri: string,
 }
+
+export interface IProjectContent {
+  project_title: string
+  "images_covers": {
+    [key: string]: {
+      "url": string
+      "safeName": string
+    }
+  },
+  "description_EN": {
+    "value": string
+  },
+  "description_FR": {
+    "value": string
+  },
+  "students": {
+    "value": string
+  },
+  "professors": {
+    "value": string
+  },
+  "assistants": {
+    "value": string
+  }
+}
