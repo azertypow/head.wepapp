@@ -4,7 +4,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/Home.vue'),
+    redirect: '/students',
   },
   {
     path: '/students',
@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/project/:apiProjectUriMinified',
     name: 'Project',
-    component: () => import('../views/Project.vue'),
+    redirect: '/students',
   },
 ]
 
