@@ -8,6 +8,7 @@
           @click="openProject(project)"
       >
         <img
+            class="v-home__project__cover"
             v-for="coverData of project.cover"
             :src="coverData.url"
             alt=""
@@ -66,15 +67,24 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-home {
-  img {
-    height: calc( var(--line-height) * 5 );
-    display: inline-block;
-    vertical-align: baseline;
-  }
 }
 
 .v-home__project {
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+  height: 5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.v-home__project__cover {
+  display: block;
+  height: 100%;
+  width: 12rem;
+  object-fit: cover;
+  box-sizing: content-box;
+  padding-right: 1rem;
 }
 </style>

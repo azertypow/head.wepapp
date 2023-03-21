@@ -1,5 +1,5 @@
 <template>
-  <header class="v-header-app m-g-container m-with-gutter--row">
+  <header class="v-header-app m-g-container">
 
     <div class="m-g-coll-2-12">
       <router-link
@@ -52,6 +52,7 @@ export default defineComponent({
 @import "../style/params";
 
 .v-header-app {
+  user-select: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,5 +61,8 @@ export default defineComponent({
   background: var( --site-background-color );
   z-index: 1000000;
   box-shadow: 0 10px 10px 5px rgba( var(--site-color--main--rgb-value), .1);
+  height: 4rem;
+  align-items: center;
+  border-bottom: solid 1px currentColor;
 }
 </style>
