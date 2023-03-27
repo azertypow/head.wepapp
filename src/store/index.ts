@@ -1,5 +1,7 @@
-import {createStore, useStore as baseUseStore, Store} from 'vuex'
+import {createStore, useStore as baseUseStore, Store, useStore} from 'vuex'
 import {InjectionKey} from "vue"
+import {apiProjectsPathUri} from "@/main"
+import router from "@/router"
 
 export default createStore<IState>({
 
@@ -8,6 +10,7 @@ export default createStore<IState>({
     site: null,
     projectsList: null,
     projectOpenUri: null,
+    projectContent: null,
   },
 
   mutations: {
@@ -36,6 +39,7 @@ export interface IState {
   students: IStudents | null
   projectsList: IProjects | null
   projectOpenUri: string | null
+  projectContent: null | IProjectContent
 }
 
 export interface ISite {
@@ -69,17 +73,22 @@ export interface IImageData {
 export type IProjects = IProject[]
 
 export interface IProject {
-  title: string,
+  title: {
+    value: string,
+  },
   cover: {
     url: string,
     safeName: string
   }[],
   apiUrl: string,
   apiUri: string,
+  categories: string
 }
 
 export interface IProjectContent {
-  project_title: string
+  project_title: {
+    value: string
+  },
   "images_covers": {
     [key: string]: {
       "url": string
@@ -101,4 +110,20 @@ export interface IProjectContent {
   "assistants": {
     "value": string
   }
+  categories: string
+  images_gallery: {
+    [key: string]: {
+      "url": string
+      "safeName": string
+    }
+  }
+  embed_items_gallery: {
+    "content": {
+      "code": string
+      "language": string
+    },
+    "id": string
+    "isHidden": string
+    "type": string
+  }[]
 }

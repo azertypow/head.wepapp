@@ -10,8 +10,10 @@
       </router-link>
     </div>
 
-    <div class="m-g-coll-4-12">
-      {{$route.name}}
+    <div class="m-g-coll-4-12 v-header-app__project-title">
+      <template
+          v-if="store.state.projectContent"
+      >{{$route.name}}/{{store.state.projectContent.project_title.value}}</template>
     </div>
 
     <div class="m-g-coll-6-12">
@@ -64,5 +66,23 @@ export default defineComponent({
   height: 4rem;
   align-items: center;
   border-bottom: solid 1px currentColor;
+}
+
+.v-header-app__project-title {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 3em;
+    background: linear-gradient(to left, var(--site-background-color), rgba(var(--site-background-color--rgb-value), 0) 100%);
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
 }
 </style>

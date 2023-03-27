@@ -13,7 +13,16 @@
             :src="coverData.url"
             alt=""
         >
-        {{project.title}}
+        <div>
+          <div>
+            {{project.title.value}}
+          </div>
+          <div class="v-home__project__tags">
+            <button
+                v-for="category of project.categories.split(',').map(value => {return value.trim()})"
+            >{{category}}</button>
+          </div>
+        </div>
       </div>
     </page-view>
   </div>
@@ -75,7 +84,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   box-sizing: content-box;
-  height: 5rem;
+  height: 8rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
 }

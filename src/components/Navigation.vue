@@ -5,7 +5,7 @@
     >
       <router-link
           :to="route.path"
-          v-if="this.$route.name !== route.name"
+          v-if="this.$route.name !== route.name && route.name !== 'Project'"
       >{{route.name}}</router-link>
     </template>
   </nav>

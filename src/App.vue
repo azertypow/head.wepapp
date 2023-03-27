@@ -27,5 +27,6 @@ export default defineComponent({
   min-height: 100vh;
   box-sizing: border-box;
   padding-top: var(--header-height);
+  padding-bottom: 33.33333%;
 }
 </style>
