@@ -96,4 +96,10 @@ export default defineComponent({
   box-sizing: content-box;
   padding-right: 1rem;
 }
+
+.v-home__project__tags {
+  > * {
+    margin-right: 1rem;
+  }
+}
 </style>

@@ -49,11 +49,11 @@ export default defineComponent({
   width: 100%;
   overflow: hidden;
   background: var(site-background-color);
-  color: var( --site-color );
-  border: solid 1px rgba(var( --site-color--rgb-value ), 0.5);
   box-sizing: border-box;
-  box-shadow: 0 10px 10px 5px rgba( var(--site-color--main--rgb-value), .1);
   text-decoration: inherit;
+  box-shadow: 0 10px 10px 5px rgba( var(--site-color--main--rgb-value), .15);
+  border: solid 1px rgba(var( --site-color--main--rgb-value ), .25);
+  border-radius: .75rem;
 }
 
 .v-resources-item__img {
@@ -87,7 +87,8 @@ export default defineComponent({
 .v-resources-item__title {
   padding: var( --padding );
   margin: 0;
-  color: var( --site-color--main );
+  color: white;
+  text-decoration: none;
 }
 
 .v-resources-item__content {
